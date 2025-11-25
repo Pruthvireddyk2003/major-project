@@ -1,0 +1,11 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/me/route": "app/api/auth/me/route.js",
+  "/api/logs/driver/route": "app/api/logs/driver/route.js",
+  "/api/logs/latest/route": "app/api/logs/latest/route.js",
+  "/live/page": "app/live/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js"
+}

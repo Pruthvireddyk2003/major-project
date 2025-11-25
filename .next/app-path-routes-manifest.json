@@ -1,0 +1,11 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/auth/login/route": "/api/auth/login",
+  "/api/auth/me/route": "/api/auth/me",
+  "/api/logs/driver/route": "/api/logs/driver",
+  "/api/logs/latest/route": "/api/logs/latest",
+  "/live/page": "/live",
+  "/login/page": "/login",
+  "/page": "/"
+}

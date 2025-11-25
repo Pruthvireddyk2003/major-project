@@ -1,0 +1,44 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+/// ---------------------------
+/// DRIVER MODEL
+/// ---------------------------
+model Driver {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      String   @default("driver") // "driver" | "admin"
+  createdAt DateTime @default(now())
+  
+  logs      DriverLog[]
+}
+
+/// ---------------------------
+/// DRIVER LOG MODEL
+/// ---------------------------
+model DriverLog {
+  id       String  @id @default(cuid())
+  driverId String
+  driver   Driver  @relation(fields: [driverId], references: [id])
+
+  drowsiness       Float? // 0-1
+  emotion          String?
+  eyeAspectRatio   Float? // EAR
+  mouthAspectRatio Float? // MAR
+  headPose         String? // pitch,yaw,roll
+  blinkDetected    Boolean?
+  microExpression  String? // "surprised", "angry", etc.
+  speechVolume     Float? // dB
+
+  timestamp DateTime @default(now())
+}
